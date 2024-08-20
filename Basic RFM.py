@@ -25,3 +25,4 @@ rfm['RFM_Score'] = rfm['recency_score'].astype(str) + rfm['frequency_score'].ast
 
 
 print(rfm)
+
