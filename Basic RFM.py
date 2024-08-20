@@ -9,10 +9,8 @@ data = {
 
 df = pd.DataFrame(data)
 
-# Convert order_date to datetime
 df['order_date'] = pd.to_datetime(df['order_date'])
 
-# Calculate metrics
 rfm = df.groupby('customer_id').agg(
     recency=('order_date', lambda x: (df['order_date'].max() - x.max()).days),
     monetary_value=('order_value', 'sum'),
